@@ -1,14 +1,23 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import '../../styles/layout.css';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        navigate('/login');
+    }
 
     return(
         <header className="header">
             <div className="header-container">
-                <NavLink to="/" className="brand">
+                <NavLink to="/home" className="brand">
                     <span className="brand-text">Start Bootstrap</span>
                 </NavLink>
 
@@ -39,23 +48,17 @@ const Header = () => {
                         <li className="nav-item">
                             <NavLink to="/calendar" className="nav-link">Calendar</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to="/messenger" className="nav-link">Messenger</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/ai" className="nav-link">AI</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/hub" className="nav-link">Hub</NavLink>
-                        </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <NavLink to="/meeting" className="nav-link">Meeting</NavLink>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
-                            <NavLink to="/employee" className="nav-link">Emp</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/document" className="nav-link">Doc</NavLink>
+                            <button
+                                onClick={handleLogout}
+                                className="nav-link logout-btn"
+                            >
+                                <FontAwesomeIcon icon={faSignOutAlt} className="logout-icon" />
+                                <span>Logout</span>
+                            </button>
                         </li>
                     </ul>
                 </nav>

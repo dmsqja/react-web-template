@@ -1,7 +1,5 @@
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
-import Sidebar from './Sidebar';
-import BottomNav from './BottomNav';
 import Footer from './Footer';
 import { useEffect, useState } from 'react';
 import '../../styles/layout.css';
@@ -29,13 +27,6 @@ const Layout = () => {
                 </div>
             </main>
             <Footer />
-            {/* 모바일에서 사이드바가 열릴 때 오버레이 추가 */}
-            {isMenuOpen && (
-                <div 
-                    className={`sidebar-overlay ${isMenuOpen ? 'show' : ''}`}
-                    onClick={() => setIsMenuOpen(false)}
-                />
-            )}
         </div>
     );
 };

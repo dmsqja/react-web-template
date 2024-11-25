@@ -54,6 +54,31 @@
     color: var(--primary);
 }
 
+.nav-link.logout-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.logout-btn {
+    font-size: 0.875rem;
+    color: inherit;
+}
+
+.nav-link.logout-btn:hover,
+.nav-link.logout-btn:active {
+    color: var(--primary);
+}
+
 .menu-toggler {
     display: none;
     padding: 0.1rem 0.5rem 0.5rem 0.5rem;
@@ -219,7 +244,11 @@
     .nav-menu.show .nav-item:nth-child(10) {transition-delay: 1.0s; }
     .nav-menu.show .nav-item:nth-child(11) {transition-delay: 1.1s; }
 
-
+    .nav-link.logout-btn {
+        padding: 0;
+        width: 100%;
+        text-align: left;
+    }
 }
 
 @media (max-width: 576px) {

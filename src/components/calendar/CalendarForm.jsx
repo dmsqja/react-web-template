@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { format } from 'date-fns';
+import React, { useState, useEffect } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import googleCalendarPlugin from '@fullcalendar/google-calendar';
 import '../../styles/calendar.css';
 
 const CalendarForm = () => {
-    const [events, setEvents] = useState([
+    const [localEvents, setLocalEvents] = useState([
         {
             title: '알바',
             start: '2024-11-23',
@@ -28,6 +28,13 @@ const CalendarForm = () => {
     
     const [showModal, setShowModal] = useState(false);
 
+    // Google Calendar API 키를 환경 변수에서 가져옴
+    const apiKey = process.env.REACT_APP_GOOGLE_CALENDAR_API_KEY;
+
+    useEffect(() => {
+        console.log('API Key loaded:', apiKey ? 'Yes' : 'No');
+    }, [apiKey]);
+
     // 이벤트 저장
     const handleSave = () => {
         if (!newEvent.content_title || !newEvent.start || !newEvent.end) {
@@ -45,7 +52,7 @@ const CalendarForm = () => {
             }
         };
 
-        setEvents(prev => [...prev, event]);
+        setLocalEvents(prev => [...prev, event]);
         setNewEvent({
             content_title: '',
             description: '',
@@ -66,7 +73,7 @@ const CalendarForm = () => {
             </div>
 
             <FullCalendar
-                plugins={[dayGridPlugin, interactionPlugin]}
+                plugins={[dayGridPlugin, interactionPlugin, googleCalendarPlugin]}
                 initialView="dayGridMonth"
                 headerToolbar={{
                     left: 'prev,next today',
@@ -76,9 +83,18 @@ const CalendarForm = () => {
                 height="auto"
                 locale="ko"
                 firstDay={0}
-                events={events}
                 eventDisplay="block"
                 dayMaxEvents={true}
+                googleCalendarApiKey={apiKey}
+                eventSources={[
+                    {
+                        googleCalendarId: 'dmsqja0107@gmail.com',
+                        className: 'gcal-event',     // 구글 캘린더 이벤트에 대한 CSS 클래스
+                        color: '#B4D5FF',          // 구글 캘린더 이벤트 색상
+                        textColor: 'black'         // 구글 캘린더 이벤트 텍스트 색상
+                    },
+                    localEvents  // 로컬에서 추가한 이벤트
+                ]}
             />
 
             {showModal && (

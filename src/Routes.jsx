@@ -10,6 +10,7 @@ const Resume = lazy(() => import('./pages/Resume'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Calendar = lazy(() => import ('./pages/Calendar'));
+const Calendar_2 = lazy(() => import ('./pages/Calendar_2'));
 const Meeting = lazy(() => import ('./pages/Meeting'));
 
 const AppRoutes = () => {
@@ -26,6 +27,7 @@ const AppRoutes = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/calendar" element={<Calendar />} />
+        <Route path="/calendar_2" element={<Calendar_2 />} />
         <Route path="/meeting" element={<Meeting />} />
       </Route>
       

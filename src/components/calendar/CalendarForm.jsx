@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
+import { format } from 'date-fns';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import '../../styles/calendar.css';
 
 const CalendarForm = () => {
-    // 상태 관리
     const [events, setEvents] = useState([
         {
             title: '알바',
             start: '2024-11-23',
-            backgroundColor: 'var(--primary)',
-            borderColor: 'var(--primary)'
-        },
-        {
-            title: '몰입형',
-            start: '2024-11-25',
-            end: '2024-11-29',
-            backgroundColor: 'var(--secondary)',
-            borderColor: 'var(--secondary)'
+            end: '2024-11-23',
+            extendedProps: {
+                description: 'CU',
+                location: '두정역'
+            }
         }
     ]);
     
@@ -32,7 +28,7 @@ const CalendarForm = () => {
     
     const [showModal, setShowModal] = useState(false);
 
-    // 이벤트 저장 핸들러
+    // 이벤트 저장
     const handleSave = () => {
         if (!newEvent.content_title || !newEvent.start || !newEvent.end) {
             alert('제목과 날짜를 모두 입력해주세요.');
@@ -40,12 +36,13 @@ const CalendarForm = () => {
         }
 
         const event = {
-            title: `${newEvent.content_title}${newEvent.description ? ` - ${newEvent.description}` : ''}`,
+            title: newEvent.content_title,
             start: newEvent.start,
             end: newEvent.end,
-            location: newEvent.location,
-            backgroundColor: 'var(--primary)',
-            borderColor: 'var(--primary)'
+            extendedProps: {
+                description: newEvent.description,
+                location: newEvent.location
+            }
         };
 
         setEvents(prev => [...prev, event]);
@@ -57,16 +54,13 @@ const CalendarForm = () => {
             end: ''
         });
         setShowModal(false);
-    };
+    }
 
     return (
         <div className="calendar-container container my-4">
             <div className="calendar-header">
                 <h2>일정 관리</h2>
-                <button
-                    className="btn-add"
-                    onClick={() => setShowModal(true)}
-                >
+                <button className="btn-add" onClick={() => setShowModal(true)}>
                     일정 추가
                 </button>
             </div>
@@ -87,16 +81,12 @@ const CalendarForm = () => {
                 dayMaxEvents={true}
             />
 
-            {/* 모달 컴포넌트 */}
             {showModal && (
                 <div className="modal">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h2>새 일정 추가</h2>
-                            <button
-                                className="btn-close"
-                                onClick={() => setShowModal(false)}
-                            >
+                            <button className="btn-close" onClick={() => setShowModal(false)}>
                                 x
                             </button>
                         </div>
@@ -153,6 +143,7 @@ const CalendarForm = () => {
                                 <input
                                     type="date"
                                     value={newEvent.end}
+                                    min={newEvent.start}
                                     onChange={(e) => setNewEvent(prev => ({
                                         ...prev,
                                         end: e.target.value
@@ -161,16 +152,10 @@ const CalendarForm = () => {
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button
-                                className="btn-save"
-                                onClick={handleSave}
-                            >
+                            <button className="btn-save" onClick={handleSave}>
                                 저장
                             </button>
-                            <button
-                                className="btn-cancel"
-                                onClick={() => setShowModal(false)}
-                            >
+                            <button className="btn-cancel" onClick={() => setShowModal(false)}>
                                 취소
                             </button>
                         </div>

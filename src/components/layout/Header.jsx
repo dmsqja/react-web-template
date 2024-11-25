@@ -48,6 +48,9 @@ const Header = () => {
                         <li className="nav-item">
                             <NavLink to="/calendar" className="nav-link">Calendar</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink to="/calendar_2" className="nav-link">Calendar(Google)</NavLink>
+                        </li>
                         {/* <li className="nav-item">
                             <NavLink to="/meeting" className="nav-link">Meeting</NavLink>
                         </li> */}

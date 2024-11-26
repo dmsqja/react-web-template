@@ -11,7 +11,7 @@ const Footer = () => {
                         <span class="mx-1">&middot;</span>
                         <a class="small" href="#!">Terms</a>
                         <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
+                        <a class="small" href="/contact">Contact</a>
                     </div>
                 </div>
             </div>

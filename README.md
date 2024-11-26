@@ -11,17 +11,21 @@
 
 ## 설치
 
-1. 리포지토리를 클론합니다:
-    ```bash
-    git clone https://github.com/yourusername/Webpage-template.git
+프로젝트에 필요한 의존성:
+
+1. 라우팅
+   ```
+   npm install react-router-dom
+   ```
+2. 캘린더 기능
+   ```
+   npm install @fullcalendar/react react-big-calendar
+   ```
+3. UI 컴포넌트
+
+    index.hteml 파일의 <head> 태그 안에 다음 코드를 추가:
     ```
-2. 프로젝트 디렉토리로 이동합니다:
-    ```bash
-    cd Webpage-template
-    ```
-3. 의존성을 설치합니다:
-    ```bash
-    npm install
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     ```
 
 ## 사용법

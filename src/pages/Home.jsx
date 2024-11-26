@@ -1,4 +1,4 @@
-// 메인 화면
+// Home page
 import Hero from '../components/home/Hero';
 import About from '../components/home/About';
 import '../styles/styles.css'

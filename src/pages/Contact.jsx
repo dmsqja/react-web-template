@@ -1,3 +1,4 @@
+// Contact page
 import ContactForm from '../components/contact/ContactForm';
 import '../styles/styles.css';
 

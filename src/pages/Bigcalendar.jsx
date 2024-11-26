@@ -1,4 +1,4 @@
-// 일정 관리 화면
+// react-big-calendar page
 import BigCalendar from '../components/calendar/BigCalendar';
 import '../styles/pages.css';
 

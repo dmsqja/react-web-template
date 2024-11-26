@@ -1,3 +1,4 @@
+// Resume page
 import Experience from '../components/resume/Experience';
 import Education from '../components/resume/Education';
 import Skills from '../components/resume/Skills';

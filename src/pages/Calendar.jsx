@@ -1,4 +1,4 @@
-// 일정 관리 화면
+// FullCalendar page
 import FCForm from '../components/calendar/FullCalendar';
 import '../styles/pages.css';
 

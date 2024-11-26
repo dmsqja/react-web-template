@@ -1,5 +1,5 @@
 // 일정 관리 화면
-import FullCalendar from '../components/calendar/FullCalendar';
+import FCForm from '../components/calendar/FullCalendar';
 import '../styles/pages.css';
 
 const Calendar = () => {
@@ -11,7 +11,7 @@ const Calendar = () => {
         </h1>
       </div>
       <div className="calendar-container">
-        <FullCalendar />
+        <FCForm />
       </div>
     </div>
   );

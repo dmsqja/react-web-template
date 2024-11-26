@@ -2,7 +2,7 @@
 import BigCalendar from '../components/calendar/BigCalendar';
 import '../styles/pages.css';
 
-const Calendar_2 = () => {
+const Bigcalendar = () => {
   return (
     <div className="page calendar-page">
       <div className="page-header">
@@ -17,4 +17,4 @@ const Calendar_2 = () => {
   );
 };
 
-export default Calendar_2;
+export default Bigcalendar;

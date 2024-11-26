@@ -1,72 +1,21 @@
-import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import '../../styles/layout.css';
+import '../../styles/styles.css';
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const navigate = useNavigate();
-
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-        navigate('/login');
-    }
-
     return(
-        <header className="header">
-            <div className="header-container">
-                <NavLink to="/home" className="brand">
-                    <span className="brand-text">Start Bootstrap</span>
-                </NavLink>
-
-                <button
-                    className="menu-toggler"
-                    type="button"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    aria-expanded={isMenuOpen}
-                    aria-controls="navMenu"
-                >
-                    <span className="toggler-icon"></span>
-                </button>
-
-                <nav className={`nav-menu ${isMenuOpen ? 'show' : ''}`} id="navMenu" >
-                    <ul className="nav-list">
-                        <li className="nav-item">
-                            <NavLink to="/home" className="nav-link">Home</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/resume" className="nav-link">Resume</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/projects" className="nav-link">Projects</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/contact" className="nav-link">Contact</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/calendar" className="nav-link">FullCalendar</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/calendar_2" className="nav-link">BigCalendar</NavLink>
-                        </li>
-                        {/* <li className="nav-item">
-                            <NavLink to="/meeting" className="nav-link">Meeting</NavLink>
-                        </li> */}
-                        <li className="nav-item">
-                            <button
-                                onClick={handleLogout}
-                                className="nav-link logout-btn"
-                            >
-                                <FontAwesomeIcon icon={faSignOutAlt} className="logout-icon" />
-                                <span>Logout</span>
-                            </button>
-                        </li>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Start Bootstrap</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/resume">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                     </ul>
-                </nav>
+                </div>
             </div>
-        </header>
+        </nav>
     );
 };
 

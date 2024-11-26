@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 import AppRoutes from './Routes';
-import './styles/global.css';
-import './styles/pages.css';
+import './styles/styles.css';
 
 function App() {
   return (

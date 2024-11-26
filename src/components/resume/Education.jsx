@@ -1,56 +1,50 @@
-import '../../styles/resume.css'
+import '../../styles/styles.css';
 
 const Education = () => {
-    const educationData = [
-        {
-            period: "2015 - 2017",
-            school: "Barnett College",
-            location: "Fairfield, NY",
-            degree: "Master's",
-            field: "Web Development",
-            description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Delectus laudantium, voluptatem quis repellendus eaque sit animi illo 
-                ipsam amet officiis corporis sed aliquam non voluptate corrupti excepturi 
-                maxime porro fuga.`
-        },
-        {
-            period: "2011 - 2015",
-            school: "ULA",
-            location: "Los Angeles, CA",
-            degree: "Undergraduate",
-            field: "Computer Science",
-            description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-              Delectus laudantium, voluptatem quis repellendus eaque sit animi illo 
-              ipsam amet officiis corporis sed aliquam non voluptate corrupti excepturi 
-              maxime porro fuga.`
-        }
-    ];
-
     return (
-        <section className="education">
-            <h2 className="section-title text-secondary">Education</h2>
-
-            <div className="education-list">
-                {educationData.map((edu,index) => (
-                    <div key={index} className="timeline-item card">
-                        <div className="card-body">
-                            <div className="timeline-info">
-                                <div className="period">{edu.period}</div>
-                                <div className="school-info">
-                                    <h3 className="school">{edu.school}</h3>
-                                    <div className="location">{edu.location}</div>
-                                </div>
-                                <div className="degree-info">
-                                    <div className="degree">{edu.degree}</div>
-                                    <div className="field">{edu.field}</div>
+        <section>
+                            <h2 class="text-secondary fw-bolder mb-4">Education</h2>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-secondary fw-bolder mb-2">2015 - 2017</div>
+                                                <div class="mb-2">
+                                                    <div class="small fw-bolder">Barnett College</div>
+                                                    <div class="small text-muted">Fairfield, NY</div>
+                                                </div>
+                                                <div class="fst-italic">
+                                                    <div class="small text-muted">Master's</div>
+                                                    <div class="small text-muted">Web Development</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8"><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime porro fuga.</div></div>
+                                    </div>
                                 </div>
                             </div>
-                            <p className="description">{edu.description}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </section>
+                            <div class="card shadow border-0 rounded-4 mb-5">
+                                <div class="card-body p-5">
+                                    <div class="row align-items-center gx-5">
+                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
+                                            <div class="bg-light p-4 rounded-4">
+                                                <div class="text-secondary fw-bolder mb-2">2011 - 2015</div>
+                                                <div class="mb-2">
+                                                    <div class="small fw-bolder">ULA</div>
+                                                    <div class="small text-muted">Los Angeles, CA</div>
+                                                </div>
+                                                <div class="fst-italic">
+                                                    <div class="small text-muted">Undergraduate</div>
+                                                    <div class="small text-muted">Computer Science</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8"><div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus laudantium, voluptatem quis repellendus eaque sit animi illo ipsam amet officiis corporis sed aliquam non voluptate corrupti excepturi maxime porro fuga.</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
     );
 };
 

@@ -1,11 +1,53 @@
-/* Commen Page Styles */
+/* Pages.css */
 :root {
+  /* Colors */
+  --primary: #1e30f3;
+  --secondary: #e21e80;
+  --success: #198754;
+  --info: #0dcaf0;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  
+  /* Typography */
+  --font-family-sans-serif: 'Plus Jakarta Sans', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  /* Layout & Spacing */
   --page-padding: 5rem;
   --section-spacing: 4rem;
   --container-max-width: 1200px;
   --border-radius: 1rem;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 1rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 3rem;
+  
+  /* Gradients */
+  --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
 }
 
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-sans-serif);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--dark);
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page Layout */
 .page {
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   animation: fadeIn 0.3s ease-in;
@@ -14,7 +56,20 @@
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 var(--container-padding);
+  padding: 0 var(--spacing-3);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .cta-title {
@@ -23,11 +78,13 @@
   margin-bottom: 2rem;
 }
 
-.section-spacing {
-  height: 3rem;
+/* Page Headers */
+.page-header {
+  padding: var(--section-spacing);
+  text-align: center;
 }
 
-/* page */
+/* Common Page Styles */
 .resume-page,
 .projects-page,
 .calendar-page,
@@ -42,7 +99,7 @@
   background-color: var(--light);
 }
 
-/* Container */
+/* Container Variants */
 .calendar-container,
 .msg-container,
 .ai-container,
@@ -55,32 +112,6 @@
   padding: 0 1rem;
 }
 
-/* Page Headers */
-.page-header {
-  padding: var(--section-spacing);
-  text-align: center;
-}
-
-.page-title {
-  font-size: 3rem;
-  font-weight: 700;
-}
-
-/* Projects Page Sepcific */
-.projects-cta {
-  background: var(--gradient);
-  color: white;
-  padding: var(--page-padding) 0;
-  text-align: center;
-  margin-top: auto;
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-}
-
-/* Home Page Specific */
-
-/* Resume Page Specific */
 .resume-container {
   max-width: 900px;
   margin: 3rem auto;
@@ -96,24 +127,13 @@
   margin: 0 auto;
 }
 
-/* Calendar Page Specific */
-
-/* Chat Page Specific */
-
-/* Ai Page Specific */
-
-/* Hub Page Specific */
-
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transfomr: translateY(0);
-  }
+/* Projects Page Specific */
+.projects-cta {
+  background: var(--gradient);
+  color: white;
+  padding: var(--page-padding) 0;
+  text-align: center;
+  margin-top: auto;
 }
 
 /* Utility Classes */
@@ -126,6 +146,10 @@
 
 .bg-gradient {
   background: var(--gradient);
+}
+
+.section-spacing {
+  height: 3rem;
 }
 
 /* Button Styles */
@@ -149,6 +173,18 @@
 .btn-outline-light:hover {
   background-color: white;
   color: var(--primary);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Styles */
@@ -176,6 +212,10 @@
   .page-title {
     font-size: 2rem;
   }
+
+  .container {
+    max-width: 720px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -186,5 +226,9 @@
 
   .page-title {
     font-size: 1.5rem;
+  }
+
+  .container {
+    max-width: 540px;
   }
 }

@@ -1,41 +1,26 @@
-import '../../styles/home.css';
+import '../../styles/styles.css';
 
 const About = () => {
     return(
-        <section className="about">
-            <div className="about-container">
-                <div className="about-content">
-                    <h2 className="about-title">
-                        <span className="gradient-text">About Me</span>
-                    </h2>
-
-                    <div className="about-text">
-                        <h3 className="about-name">
-                            My name is Start Bootstrap and I help brands grow.
-                        </h3>
-
-                        <p className="about-description">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            Fugit dolorum itaque qui unde quisquam consequatur autem. 
-                            Eveniet quasi nobis aliquid cumque officiis sed rem iure 
-                            ipsa! Praesentium ratione atque dolorem?
-                        </p>
-
-                        <div className="social-links">
-                            <a href="#!" className="social-link gradient-text">
-                                <i className="fab fa-twitter"></i>
-                            </a>
-                            <a href="#!" className="social-link gradient-text">
-                                <i className="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#!" className="social-link gradient-text">
-                                <i className="fab fa-github"></i>
-                            </a>
+        <section class="bg-light py-5">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-xxl-8">
+                        <div class="text-center my-5">
+                            <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
+                            <p class="lead fw-light mb-4">My name is Start Bootstrap and I help brands grow.</p>
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit dolorum itaque qui unde quisquam consequatur autem. Eveniet quasi nobis aliquid cumque officiis sed rem iure ipsa! Praesentium ratione atque dolorem?</p>
+                            <div class="d-flex justify-content-center fs-2 gap-4">
+                                <a class="text-gradient" href="#!"><i class="fa-brands fa-twitter"></i></a>
+                                <a class="text-gradient" href="#!"><i class="fa-brands fa-linkedin"></i></a>
+                                <a class="text-gradient" href="#!"><i class="fa-brands fa-github"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
     );
 };
 

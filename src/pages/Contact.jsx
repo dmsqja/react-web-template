@@ -1,13 +1,13 @@
 import ContactForm from '../components/contact/ContactForm';
-import '../styles/pages.css';
+import '../styles/styles.css';
 
 const Contact = () => {
   return (
-    <div className="page contact-page">
-      <div className="container">
-        <ContactForm />
+    <section class="py-5">
+      <div class="container px-5">
+          <ContactForm />
       </div>
-    </div>
+    </section>
   );
 };
 

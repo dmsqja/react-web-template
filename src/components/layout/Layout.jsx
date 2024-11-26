@@ -2,10 +2,10 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import { useEffect, useState } from 'react';
-import '../../styles/layout.css';
+import '../../styles/styles.css';
 
 const Layout = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen] = useState(false);
 
     useEffect(() => {
         if (isMenuOpen) {
@@ -19,15 +19,13 @@ const Layout = () => {
     }, [isMenuOpen]);
 
     return(
-        <div className="layout">
-            <Header setIsMenuOpen={setIsMenuOpen} />
-            <main className="main-content">
-                <div className="page-container">
-                    <Outlet />
-                </div>
+        <body class="d-flex flex-column h-100 bg-light">
+            <main class="flex-shrink-0">
+                <Header />
+                <Outlet />
             </main>
             <Footer />
-        </div>
+        </body>
     );
 };
 

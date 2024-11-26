@@ -46,10 +46,10 @@ const Header = () => {
                             <NavLink to="/contact" className="nav-link">Contact</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/calendar" className="nav-link">Calendar</NavLink>
+                            <NavLink to="/calendar" className="nav-link">FullCalendar</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to="/calendar_2" className="nav-link">Calendar(Google)</NavLink>
+                            <NavLink to="/calendar_2" className="nav-link">BigCalendar</NavLink>
                         </li>
                         {/* <li className="nav-item">
                             <NavLink to="/meeting" className="nav-link">Meeting</NavLink>

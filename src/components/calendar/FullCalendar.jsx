@@ -5,7 +5,7 @@ import interactionPlugin from '@fullcalendar/interaction';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
 import '../../styles/calendar.css';
 
-const CalendarForm = () => {
+const FCForm = () => {
     const [localEvents, setLocalEvents] = useState([
         {
             title: '알바',
@@ -182,4 +182,4 @@ const CalendarForm = () => {
     );
 };
 
-export default CalendarForm;
+export default FCForm;

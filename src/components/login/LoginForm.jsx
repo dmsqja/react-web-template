@@ -54,11 +54,8 @@ const Login = () => {
     if (Object.keys(newErrors).length === 0) {
       setIsLoading(true);
       try {
-        // 테스트용 로그인 검증
         if (formData.email === TEST_USER.email && formData.password === TEST_USER.password) {
-          // 로그인 성공 시 localStorage에 간단한 토큰 저장
           localStorage.setItem('isLoggedIn', 'true');
-          // home 페이지로 이동
           navigate('/home');
         } else {
           setErrors({ submit: 'Invalid email or password' });
@@ -117,7 +114,6 @@ const Login = () => {
                       onChange={handleChange}
                       className={`form-input ${errors.email ? 'error' : ''}`}
                       placeholder="Email Address"
-                      aria-label="Email Address"
                     />
                     <i className="input-icon fas fa-envelope"></i>
                   </div>
@@ -134,14 +130,12 @@ const Login = () => {
                       onChange={handleChange}
                       className={`form-input ${errors.password ? 'error' : ''}`}
                       placeholder="Password"
-                      aria-label="Password"
                     />
                     <i className="input-icon fas fa-lock"></i>
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
                       className="password-toggle"
-                      aria-label={showPassword ? 'Hide password' : 'Show password'}
                     >
                       <i className={`fas ${showPassword ? 'fa-eye-slash' : 'fa-eye'}`}></i>
                     </button>

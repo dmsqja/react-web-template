@@ -5,10 +5,12 @@ import '../styles/styles.css';
 
 const Projects = () => {
   return (
-    <div>
-      <ProjectCard />
-      <ContactMe />
-    </div>
+    <body class="d-flex flex-column h-100 bg-light">
+      <main class="flex-shrink-0">
+        <ProjectCard />
+        <ContactMe />
+      </main>
+    </body>
   );
 };
 

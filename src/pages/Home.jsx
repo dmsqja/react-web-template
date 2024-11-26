@@ -5,10 +5,12 @@ import '../styles/styles.css'
 
 const Home = () => {
   return (
-    <div>
-      <Hero />
-      <About />
-    </div>
+    <body class="d-flex flex-column h-100">
+      <main class="flex-shrink-0">
+        <Hero />
+        <About />
+      </main>
+    </body>
   );
 };
 

@@ -1,10 +1,28 @@
+:root {
+    --light: #ffffff;
+    --dark: #212529;
+    --primary: #1e30f3;
+    --gray: #6c757d;
+    --danger: #dc3545;
+    --gradient: linear-gradient(135deg, #1e30f3 0%, #e21e80 100%);
+    
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 1rem;
+    --spacing-4: 1.5rem;
+    --spacing-5: 3rem;
+    
+    --border-radius-xl: 0.75rem;
+    --font-family-sans-serif: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+  
 .login-container {
     display: flex;
     min-height: 100vh;
     width: 100%;
     background-color: var(--light);
 }
-  
+
 .login-wrapper {
     width: 100%;
     max-width: 1440px;
@@ -12,7 +30,7 @@
     display: flex;
     position: relative;
 }
-  
+
 /* Left Section */
 .login-left {
     width: 60%;

@@ -19,13 +19,11 @@ const Layout = () => {
     }, [isMenuOpen]);
 
     return(
-        <body class="d-flex flex-column h-100 bg-light">
-            <main class="flex-shrink-0">
-                <Header />
-                <Outlet />
-            </main>
+        <div>
+            <Header />
+            <Outlet />
             <Footer />
-        </body>
+        </div>
     );
 };
 

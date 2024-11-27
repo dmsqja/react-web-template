@@ -19,11 +19,11 @@ const Layout = () => {
     }, [isMenuOpen]);
 
     return(
-        <div>
+        <>
             <Header />
             <Outlet />
             <Footer />
-        </div>
+        </>
     );
 };
 

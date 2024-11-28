@@ -3,7 +3,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
-import '../../styles/calendar.css';
+import '../../styles/fullcalendar.css';
 
 const FCForm = () => {
     const [localEvents, setLocalEvents] = useState([

@@ -1,4 +1,4 @@
-// react-big-calendar page
+// React-Big-Calendar page
 import BigCalendar from '../components/calendar/BigCalendar';
 import '../styles/pages.css';
 

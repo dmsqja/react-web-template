@@ -1,4 +1,4 @@
-// // 화상 회의 화면
+// // Meeting page
 // import WebRTCComponents from '../components/webrtc/WebRTCComponents.tsx';
 // import '../styles/pages.css';
 

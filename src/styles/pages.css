@@ -85,55 +85,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Common Page Styles */
-.resume-page,
-.projects-page,
 .calendar-page,
-.msg-page,
-.ai-page,
-.hub-page,
-.home-page,
-.contact-page,
-.meeting-page,
-.emp-page,
-.doc-page {
+.map-page {
   background-color: var(--light);
 }
 
 /* Container Variants */
 .calendar-container,
-.msg-container,
-.ai-container,
-.hub-container,
-.meeting-container,
-.emp-container,
-.doc-container {
+.map-container {
   max-width: 1200px;
   margin: 3rem auto;
   padding: 0 1rem;
-}
-
-.resume-container {
-  max-width: 900px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-}
-
-/* Contact Page Specific */
-.contact-page {
-  border-radius: var(--border-radius);
-  padding: 3rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Projects Page Specific */
-.projects-cta {
-  background: var(--gradient);
-  color: white;
-  padding: var(--page-padding) 0;
-  text-align: center;
-  margin-top: auto;
 }
 
 /* Utility Classes */
@@ -196,10 +158,6 @@ h1, h2, h3, h4, h5, h6 {
 
   .page-title {
     font-size: 2.5rem;
-  }
-
-  .projects-cta .cta-title {
-    font-size: 2rem;
   }
 }
 

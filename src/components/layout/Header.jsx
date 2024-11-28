@@ -14,6 +14,7 @@ const Header = () => {
                         <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="/calendar">FullCalendar</a></li>
                         <li class="nav-item"><a class="nav-link" href="/bigcalendar">BigCalendar</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/kakaomap">KakaoMap</a></li>
                     </ul>
                 </div>
             </div>

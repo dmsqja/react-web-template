@@ -1,11 +1,19 @@
 import '../../styles/styles.css';
 
 const Experience = () => {
+    const handleDownload = () => {
+        alert(`
+            Download successful!
+            Check your Download folder
+            (TEST)
+        `);
+    };
+    
     return (
         <section>
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h2 class="text-primary fw-bolder mb-0">Experience</h2>
-                <a class="btn btn-primary px-4 py-3" href="#!">
+                <a class="btn btn-primary px-4 py-3" href="#!" onClick={handleDownload}>
                     <div class="d-inline-block fa-solid fa-download me-2"></div>
                     Download Resume
                 </a>

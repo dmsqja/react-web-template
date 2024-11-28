@@ -3,6 +3,13 @@ import { useState } from 'react';
 import '../../styles/styles.css';
 
 const ContactForm = () => {
+    const handleContact = () => {
+        alert(`
+            Form submission successful!
+        `);
+    };
+
+
     // form 데이터를 관리할 state
     const [formData, setFormData] = useState({
         name: '',
@@ -62,6 +69,8 @@ const ContactForm = () => {
             console.log('Form submitted:', formData);
             setSubmitStatus('success');
             setFormLocked(true);
+
+            handleContact();
         } catch (error) {
             console.error('Error submitting form:', error);
             setSubmitStatus('error');

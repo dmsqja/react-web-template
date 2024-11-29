@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import '../../styles/kakaomap.css';
 
-const KakaoMapForm = ({ height = '600px' }) => {
+const KakaoMapForm = () => {
     useEffect(() => {
+        let map = null; // 지도 인스턴스를 저장할 변수
+
         const loadKakaoMap = () => {
             window.kakao.maps.load(() => {
                 const container = document.getElementById('map');
@@ -57,6 +59,14 @@ const KakaoMapForm = ({ height = '600px' }) => {
             });
         };
 
+
+        // 윈도우 리사이즈 이벤트 핸들러
+        const handleResize = () => {
+            if (map) {
+                map.relayout(); // 지도 레이아웃 재설정
+            }
+        }
+
         const script = document.createElement('script');
         script.src = `http://dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.REACT_APP_KAKAO_MAP_API_KEY}&autoload=false`;
         script.async = true;
@@ -64,7 +74,12 @@ const KakaoMapForm = ({ height = '600px' }) => {
         script.onload = loadKakaoMap;
         document.head.appendChild(script);
 
+        // 리사이즈 이벤트 리스너 추가
+        window.addEventListener('resize', handleResize);
+
         return () => {
+            // 컴포넌트 언마운트 시 이벤트 리스너 제거
+            window.removeEventListener('resize', handleResize);
             const script = document.querySelector('script[src*="dapi.kakao.com"]');
             if (script) {
                 script.remove();

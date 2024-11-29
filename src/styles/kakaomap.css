@@ -1,9 +1,30 @@
 /* kakaomap.css */
 #map {
     width: 100%;
-    height: 600px;
+    height: 300px;
     position: relative;
     border: 1px solid #ddd;
+}
+
+/* sm */
+@media (min-width: 576px) {
+    #map {
+        height: 400px;
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+    #map {
+        height: 500px;
+    }
+}
+
+/* Lg */
+@media (min-width: 992px) {
+    #map {
+        height: 600px;
+    }
 }
 
 .info-window {

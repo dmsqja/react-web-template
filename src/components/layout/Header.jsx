@@ -12,8 +12,8 @@ const Header = () => {
     };
 
     const handleLogout = () => {
-        localStorage.removeItem('isLoggedIn');
-        localStorage.removeItem('userInfo');
+        sessionStorage.removeItem('isLoggedIn');
+        sessionStorage.removeItem('userInfo');
         navigate('/login', { replace: true });
     };
 

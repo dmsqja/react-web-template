@@ -14,7 +14,7 @@ const Login = () => {
 
   // 1. 이미 로그인된 사용자 체크
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
     if (isLoggedIn === 'true') {
       navigate('/home', { replace: true });
     }
@@ -63,8 +63,8 @@ const Login = () => {
       setIsLoading(true);
       try {
         if (formData.email === TEST_USER.email && formData.password === TEST_USER.password) {
-          localStorage.setItem('isLoggedIn', 'true');
-          localStorage.setItem('userInfo', JSON.stringify({
+          sessionStorage.setItem('isLoggedIn', 'true');
+          sessionStorage.setItem('userInfo', JSON.stringify({
             email: formData.email,
             loginTime: new Date().toISOString()
           }));

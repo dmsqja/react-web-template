@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/login.css';
 
@@ -11,6 +11,14 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  // 1. 이미 로그인된 사용자 체크
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn === 'true') {
+      navigate('/home', { replace: true });
+    }
+  }, [navigate]);
 
   // 테스트용 계정
   const TEST_USER = {
@@ -56,7 +64,12 @@ const Login = () => {
       try {
         if (formData.email === TEST_USER.email && formData.password === TEST_USER.password) {
           localStorage.setItem('isLoggedIn', 'true');
-          navigate('/home');
+          localStorage.setItem('userInfo', JSON.stringify({
+            email: formData.email,
+            loginTime: new Date().toISOString()
+          }));
+          // 2. 로그인 성공시 replace 사용
+          navigate('/home', { replace: true });
         } else {
           setErrors({ submit: 'Invalid email or password' });
         }

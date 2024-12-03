@@ -87,14 +87,16 @@ h1, h2, h3, h4, h5, h6 {
 /* Common Page Styles */
 .calendar-page,
 .map-page,
-.search-page {
+.search-page,
+.webrtc-page {
   background-color: var(--light);
 }
 
 /* Container Variants */
 .calendar-container,
 .map-container,
-.search-container {
+.search-container,
+.webrtc-container {
   max-width: 1200px;
   margin: 3rem auto;
   padding: 0 1rem;

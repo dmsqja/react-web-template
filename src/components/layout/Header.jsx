@@ -36,6 +36,7 @@ const Header = () => {
                         <li class="nav-item"><a class="nav-link" href="/bigcalendar">BigCalendar</a></li>
                         <li class="nav-item"><a class="nav-link" href="/kakaomap">KakaoMap</a></li>
                         <li class="nav-item"><a class="nav-link" href="/search">Search</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/webrtc">WebRTC</a></li>
                         <li class="nav-item">
                             <button
                                 onClick={handleLogout}

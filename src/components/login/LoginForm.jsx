@@ -12,6 +12,10 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  const handleReadMore = () => {
+    window.open('https://www.example.com', '_blank');
+  };
+
   // 1. 이미 로그인된 사용자 체크
   useEffect(() => {
     const isLoggedIn = sessionStorage.getItem('isLoggedIn');
@@ -95,7 +99,7 @@ const Login = () => {
                 <h1>GoFinance</h1>
                 <p>The most popular peer to peer lending at SEA</p>
               </div>
-              <button className="read-more-btn">
+              <button className="read-more-btn" onClick={handleReadMore}>
                 Read More
               </button>
             </div>

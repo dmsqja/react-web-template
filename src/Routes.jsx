@@ -11,7 +11,7 @@ const Projects = lazy(() => import('./pages/Projects'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Calendar = lazy(() => import ('./pages/Calendar'));
 const BigCalendar = lazy(() => import ('./pages/Bigcalendar'));
-const Meeting = lazy(() => import ('./pages/Meeting'));
+const WebRTC = lazy(() => import ('./pages/WebRTC'));
 const KakaoMap = lazy(() => import ('./pages/KakaoMap'));
 const Search = lazy(() => import ('./pages/Search'));
 
@@ -31,7 +31,7 @@ const AppRoutes = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/bigcalendar" element={<BigCalendar/>} />
-        <Route path="/meeting" element={<Meeting />} />
+        <Route path="/webrtc" element={<WebRTC />} />
         <Route path="/kakaomap" element={<KakaoMap />} />
         <Route path="/search" element={<Search />} />
       </Route>
